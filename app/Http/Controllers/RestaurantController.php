@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
-use App\Tests\Facades\Zomato;
+use App\Facade\Zomato;
 
 class RestaurantController extends Controller
 {
@@ -13,11 +13,15 @@ class RestaurantController extends Controller
     {
         return view('home');
     }
-    function list()
+    function categories()
     {
         // $data = Restaurant::all();
-        $data = Zomato::getCategories();
-        return view('list', ['data' => $data]);
+        $data = json_decode(Zomato::getCategories()->getContents(), true);
+        $serialized = [];
+        for ($i = 0; $i < count($data['categories']); $i++) {
+            $serialized[(string)$data['categories'][$i]['categories']['id']] = [$data['categories'][$i]['categories']['name'],(string)$data['categories'][$i]['categories']['id']];
+        }
+        return view('categories', ['data' => $serialized]);
     }
     function add()
     {
@@ -36,6 +40,9 @@ class RestaurantController extends Controller
         $request->session()->flash('status', 'success');
 
         return redirect("/add");
-
+    }
+    function search()
+    {
+        return view('search');
     }
 }

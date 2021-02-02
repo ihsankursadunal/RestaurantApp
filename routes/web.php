@@ -18,7 +18,8 @@ use App\Http\Controllers\RestaurantController;
 //    return view('welcome');
 // });
 
-Route::get('/',[RestaurantController::class,'index']);
-Route::get('/list',[RestaurantController::class,'list']);
-Route::get('/add',[RestaurantController::class,'add']);
-Route::post("/add",[RestaurantController::class,'add_restaurant']);
+Route::get('/', [RestaurantController::class, 'index']);
+Route::get('/categories', [RestaurantController::class, 'categories']);
+Route::get('/add', [RestaurantController::class, 'add']);
+Route::get('/search', [RestaurantController::class, 'search']);
+Route::post("/add", [RestaurantController::class, 'add_restaurant']);
