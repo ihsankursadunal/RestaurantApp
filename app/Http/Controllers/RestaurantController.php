@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use App\Facade\Zomato;
+use App\Facade\Unituto;
 
 class RestaurantController extends Controller
 {
@@ -42,7 +43,8 @@ class RestaurantController extends Controller
         return redirect("/add");
     }
     function search()
-    {
-        return view('search');
+    {   
+        $countries = json_decode(Unituto::getCountries()->getContents(), true);
+        return view('search', ['countries' => $countries]);
     }
 }

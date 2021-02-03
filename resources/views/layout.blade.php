@@ -36,5 +36,4 @@
         Copy rights by Restaurant App
     </footer> -->
 </body>
-
 </html>
