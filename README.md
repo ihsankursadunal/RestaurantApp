@@ -1,4 +1,4 @@
-<p align="center"><a target="_blank"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.9kxsTw93SFqSAyo0DQ1GRgHaEM%26pid%3DApi&f=1" width="400"></a></p>
+<p align="center"><a target="_blank"><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.9kxsTw93SFqSAyo0DQ1GRgHaEM%26pid%3DApi&f=1" width="800"></a></p>
 
 # Restaurant App
 
@@ -17,7 +17,7 @@ Requires:
 ### [Universal Tutorial](https://www.universal-tutorial.com/rest-apis/free-rest-api-for-country-state-city)
 <p align=""><a href="https://www.universal-tutorial.com/" target="_blank"><img src="https://pbs.twimg.com/profile_images/1162751100711124994/FqNtd1Xd_400x400.jpg" width="200"></a></p>
 
-Free access to country, state, and city information<br>(**up to 1000 class/hour**)<br>
+Free access to country, state, and city name information<br>(**up to 1000 calls/hour**)<br>
 Requires:
 - Login with name and e-mail
 - API key
