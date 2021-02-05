@@ -37,9 +37,9 @@ class Unituto
     /**
      * Get States list
      */
-    public function getStates(array $params): Stream
+    public function getStates(string $params): Stream
     {
-        return $this->makeRequest('GET','states', $params);
+        return $this->makeRequest('GET','states/'.$params);
     }
 
     /**

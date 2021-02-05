@@ -20,7 +20,7 @@ class RestaurantController extends Controller
         $data = json_decode(Zomato::getCategories()->getContents(), true);
         $serialized = [];
         for ($i = 0; $i < count($data['categories']); $i++) {
-            $serialized[(string)$data['categories'][$i]['categories']['id']] = [$data['categories'][$i]['categories']['name'],(string)$data['categories'][$i]['categories']['id']];
+            $serialized[(string)$data['categories'][$i]['categories']['id']] = [$data['categories'][$i]['categories']['name'], (string)$data['categories'][$i]['categories']['id']];
         }
         return view('categories', ['data' => $serialized]);
     }
@@ -43,8 +43,14 @@ class RestaurantController extends Controller
         return redirect("/add");
     }
     function search()
-    {   
+    {
         $countries = json_decode(Unituto::getCountries()->getContents(), true);
         return view('search', ['countries' => $countries]);
+    }
+    function get_states(string $country)
+    {
+        $states = json_decode(Unituto::getStates($country)->getContents(), true);
+        
+        return $states;
     }
 }
